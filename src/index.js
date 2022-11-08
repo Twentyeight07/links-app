@@ -8,11 +8,11 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
 
-const { database } = require('./config');
+const { database } = require('./config.js');
 
 //initializations
 const app = express();
-require('./lib/passport');
+require('./lib/passport.js');
 
 //settings
 app.set('views', path.join(__dirname, 'views'));

@@ -8,6 +8,10 @@ const {
 } = require('./config.js');
 
 const pool = createPool({
+  connectionLimit: 1000,
+  connectTimeout: 60 * 60 * 1000,
+  acquireTimeout: 60 * 60 * 1000,
+  timeout: 60 * 60 * 1000,
   host: DB_HOST,
   user: DB_USER,
   password: DB_PASSWORD,
