@@ -15,9 +15,9 @@ module.exports = {
   DB_PORT,
   DB_DATABASE,
   database: {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'database_link',
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
   },
 };
