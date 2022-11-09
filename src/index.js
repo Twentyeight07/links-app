@@ -61,6 +61,6 @@ app.use('/links', require('./routes/links.js'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Starting the Server
-app.listen(PORT, (req, res) => {
-  console.log(`Server running on Port ${PORT}`);
-});
+app.listen(PORT);
+
+console.log(`Server Running on PORT ${PORT}`);
