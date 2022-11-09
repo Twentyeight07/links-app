@@ -1,6 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
-const { PORT } = require('./config.js');
+const {
+  PORT,
+  DB_USER,
+  DB_PASSWORD,
+  DB_HOST,
+  DB_PORT,
+  DB_DATABASE,
+} = require('./config.js');
 const { engine } = require('express-handlebars');
 const path = require('path');
 const flash = require('connect-flash');
@@ -39,11 +46,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: new MySQLStore({
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+      host: DB_HOST,
+      port: DB_PORT,
+      user: DB_USER,
+      password: DB_PASSWORD,
+      database: DB_DATABASE,
     }),
   })
 );
