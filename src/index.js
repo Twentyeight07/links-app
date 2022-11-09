@@ -5,7 +5,7 @@ const { engine } = require('express-handlebars');
 const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
-const MySQLStore = require('express-mysql-session');
+const MySQLStore = require('express-mysql-session')(session);
 const passport = require('passport');
 
 const { database } = require('./config.js');
@@ -34,10 +34,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   session({
+    key: 'eddyloginmysql',
     secret: 'eddymysql',
     resave: false,
     saveUninitialized: false,
-    store: new MySQLStore(database),
+    store: new MySQLStore({
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+    }),
   })
 );
 app.use(flash());
