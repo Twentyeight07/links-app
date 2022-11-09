@@ -8,6 +8,4 @@ This is a tipically CRUD app to save links, you can save it add a description an
 - ✅ Endpoints secured 🔐
 - ✅ User session control
 
-live test: [Links app](https://)
-
 if you want to contact me for any reason, this is my email: [eduardofreites1999@gmail.com](mailto:eduardofreites1999@gmail.com)
