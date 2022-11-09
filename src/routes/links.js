@@ -1,4 +1,3 @@
-const { decodeBase64 } = require('bcryptjs');
 const { Router } = require('express');
 const router = Router();
 
